@@ -3,6 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollIndicator = document.createElement('div');
     scrollIndicator.className = 'scroll-indicator';
     
+    const logo = document.getElementById('logo');
+    logo.addEventListener('click', function() {
+        const homeArticle = document.getElementById('article-home');
+        if (homeArticle) {
+            homeArticle.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+    
     const articleLabels = {
         'article-home': 'Home',
         'article-people': 'People',
