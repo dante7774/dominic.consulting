@@ -3,16 +3,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollIndicator = document.createElement('div');
     scrollIndicator.className = 'scroll-indicator';
     
+    const articleLabels = {
+        'article-home': 'Home',
+        'article-people': 'People',
+        'article-processes': 'Processes',
+        'article-technology': 'Technology',
+        'article-about': 'About'
+    };
+    
     articles.forEach((article, index) => {
+        const container = document.createElement('div');
+        container.className = 'scroll-dot-container';
+        
         const dot = document.createElement('div');
         dot.className = 'scroll-dot';
         if (index === 0) dot.classList.add('active');
+        
+        const label = document.createElement('div');
+        label.className = 'scroll-label';
+        label.textContent = articleLabels[article.id] || 'Section';
         
         dot.addEventListener('click', () => {
             article.scrollIntoView({ behavior: 'smooth' });
         });
         
-        scrollIndicator.appendChild(dot);
+        container.appendChild(label);
+        container.appendChild(dot);
+        scrollIndicator.appendChild(container);
     });
     
     document.body.appendChild(scrollIndicator);

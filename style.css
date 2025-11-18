@@ -18,43 +18,7 @@ body {
 }
 
 header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-}
-
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav h1 {
-    font-size: 1.5rem;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #3498db;
+    display: none;
 }
 
 main {
@@ -69,7 +33,7 @@ article {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6rem 2rem 4rem;
+    padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -102,6 +66,16 @@ article ul {
 article ul li {
     margin-bottom: 0.5rem;
     color: #555;
+}
+
+#article-home {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#article-home h2,
+#article-home p {
+    color: white;
 }
 
 #article-people {
@@ -153,7 +127,14 @@ footer {
     z-index: 50;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.scroll-dot-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .scroll-dot {
@@ -164,6 +145,8 @@ footer {
     border: 2px solid #2c3e50;
     cursor: pointer;
     transition: all 0.3s;
+    position: relative;
+    z-index: 2;
 }
 
 .scroll-dot.active {
@@ -173,4 +156,23 @@ footer {
 
 .scroll-dot:hover {
     background-color: #3498db;
+}
+
+.scroll-label {
+    position: absolute;
+    right: 2rem;
+    background-color: #2c3e50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-dot-container:hover .scroll-label {
+    opacity: 1;
 }
