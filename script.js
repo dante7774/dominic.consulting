@@ -4,12 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollIndicator.className = 'scroll-indicator';
     
     const logo = document.getElementById('logo');
-    logo.addEventListener('click', function() {
-        const homeArticle = document.getElementById('article-home');
-        if (homeArticle) {
-            homeArticle.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
+    if (logo) {
+        logo.addEventListener('click', function() {
+            const homeArticle = document.getElementById('article-home');
+            if (homeArticle) {
+                homeArticle.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
     
     const articleLabels = {
         'article-home': 'Home',
