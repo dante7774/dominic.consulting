@@ -118,6 +118,10 @@ article ul li {
     color: white;
 }
 
+#article-home h2 {
+    text-align: left;
+}
+
 #article-home h2,
 #article-home p {
     color: white;
