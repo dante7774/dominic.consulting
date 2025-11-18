@@ -56,6 +56,39 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateActiveDot);
     
+    let scrollTimeout;
+    let lastScrollTop = 0;
+    let isScrolling = false;
+    
+    window.addEventListener('scroll', function() {
+        if (isScrolling) return;
+        
+        clearTimeout(scrollTimeout);
+        
+        scrollTimeout = setTimeout(function() {
+            const currentScrollTop = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            let targetIndex = 0;
+            articles.forEach((article, index) => {
+                const rect = article.getBoundingClientRect();
+                if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
+                    targetIndex = index;
+                }
+            });
+            
+            if (articles[targetIndex]) {
+                isScrolling = true;
+                articles[targetIndex].scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            }
+            
+            lastScrollTop = currentScrollTop;
+        }, 150);
+    }, { passive: true });
+    
     document.addEventListener('keydown', function(e) {
         const currentScroll = window.scrollY;
         const windowHeight = window.innerHeight;
@@ -68,4 +101,30 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollBy({ top: -windowHeight, behavior: 'smooth' });
         }
     });
+    
+    let touchStartY = 0;
+    let touchEndY = 0;
+    
+    document.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    document.addEventListener('touchend', function(e) {
+        touchEndY = e.changedTouches[0].clientY;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartY - touchEndY;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            const windowHeight = window.innerHeight;
+            if (diff > 0) {
+                window.scrollBy({ top: windowHeight, behavior: 'smooth' });
+            } else {
+                window.scrollBy({ top: -windowHeight, behavior: 'smooth' });
+            }
+        }
+    }
 });
