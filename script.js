@@ -135,4 +135,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+
+        // **New logic to change header background on scroll**
+    const header = document.querySelector('header');
+    const updateHeaderBackground = () => {
+        // The header should change background when the user scrolls past the first article.
+        // Since each article is 100vh, we check if scrollY is past the viewport height.
+        if (window.scrollY >= window.innerHeight - 1) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+
+        // **Attach the new handler to the scroll event**
+        window.addEventListener('scroll', updateHeaderBackground, { passive: true });
+
+        // **Call on load to check initial state (in case of refresh on a scrolled page)**
+        updateHeaderBackground();
+    });
 });
