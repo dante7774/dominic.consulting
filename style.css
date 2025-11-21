@@ -18,7 +18,7 @@ body {
 }
 
 header {
-    background-color: rgb(0, 0, 0,.85);
+    background-color:  rgba(35, 35, 63, .9);
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -40,18 +40,19 @@ nav {
 
 nav h1 {
     font-size: 1.3rem;
+    font-family: Oswald, Anton, sans-serif;
     cursor: pointer;
     transition: color 0.3s;
     margin: 0;
 }
 
 nav h1:hover {
-    color: #5b00bd;
+    color: #e4a476;
 }
 
 .cta-button {
-    background-color: #5b00bd;
-    color: white;
+    background-color: #e4a476;
+    color: black;
     text-decoration: none;
     padding: 0.7rem 1.5rem;
     border-radius: 5px;
@@ -61,7 +62,7 @@ nav h1:hover {
 }
 
 .cta-button:hover {
-    background-color: #4a0099;
+    background-color: #8897af;
     transform: translateY(-2px);
 }
 
@@ -85,7 +86,7 @@ article {
 article h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #140029;
+    color: #23233F;
     text-align: left;
 }
 
@@ -93,14 +94,14 @@ article h3 {
     font-size: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    color:#140029;
+    color:#23233F;
 }
 
 article p {
     font-size: 1rem;
     margin-right: 5rem;
     margin-bottom: 1rem;
-    color: #140029;
+    color: #000000;
 }
 
 article ul {
@@ -114,7 +115,7 @@ article ul li {
 }
 
 #article-home {
-    background: linear-gradient(135deg, #000000 0%, #140029 100%);
+    background: linear-gradient(135deg, #1a1a32 0%, #23233F 100%);
     color: white;
 }
 
@@ -128,20 +129,21 @@ article ul li {
 }
 
 #article-people {
-    background: linear-gradient(135deg, #f0ddfd 0%, #d798d266f 100%);
+    background: linear-gradient(135deg, #e4a476 0%, #e4c2aa 100%);
 }
 
 #article-processes {
-    background: linear-gradient(135deg, #e0c3fc 0%, #ead6f 100%);
+    background: linear-gradient(135deg, #6468a9 0%, #a5a8cf 100%);
 }
 
 #article-technology {
-    background: linear-gradient(135deg, #b067fe 0%, #ead6f 100%);
+    background: linear-gradient(135deg, #c9d1de 0%, #8897af 100%);
 }
 
 #article-about {
-    background: linear-gradient(135deg, #000000 0%, #140029 100%);
+    background: linear-gradient(135deg, #23233F 0%, #1a1a32 100%);
 }
+
 #article-about h2,
 #article-about p {
     color: white;
@@ -160,11 +162,11 @@ button {
 }
 
 button:hover {
-    background-color: #522182;
+    background-color: #e4a476;
 }
 
 footer {
-    background-color: #140029;
+    background-color: #23233F;
     color: white;
     text-align: center;
     padding: 2rem;
@@ -195,7 +197,7 @@ footer {
     height: 12px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
-    border: 2px solid #2c3e50;
+    border: 2px solid #7a7a7a;
     cursor: pointer;
     transition: all 0.3s;
     position: relative;
@@ -203,27 +205,27 @@ footer {
 }
 
 .scroll-dot.active {
-    background-color: #3498db;
+    background-color: #e4a476;
     transform: scale(1.3);
 }
 
 .scroll-dot:hover {
-    background-color: #3498db;
+    background-color: #6468a9;
 }
 
 .scroll-label {
     position: absolute;
     right: 2rem;
-    background-color: #2c3e50;
+    background-color: #e4a476;
     color: white;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    font-size: 0.9rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgb(140, 0, 255, 0.2);
 }
 
 .scroll-dot-container:hover .scroll-label {
