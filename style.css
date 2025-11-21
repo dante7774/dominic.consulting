@@ -18,7 +18,7 @@ body {
 }
 
 header {
-    background-color: transparent; /* Changed from rgba(35, 35, 63, .9) */
+    background-color: transparent; /* **BOLD CHANGE**: Set to transparent initially */
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -27,13 +27,7 @@ header {
     right: 0;
     z-index: 100;
     /* Removed initial box-shadow */
-    transition: background-color 0.3s, box-shadow 0.3s; /* **NEW** - Added transition for smooth change */
-}
-
-/* **NEW** - Style for the header once the user scrolls */
-header.scrolled {
-    background-color:  rgba(35, 35, 63, .9);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s; /* **BOLD CHANGE**: Added transition for smooth change */
 }
 
 nav {
@@ -121,18 +115,37 @@ article ul li {
     color: #ffffff;
 }
 
+/* **BOLD CHANGE**: Style for the header once the user scrolls */
+header.scrolled {
+    background-color:  rgba(35, 35, 63, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 #article-home {
     background: linear-gradient(135deg, #1a1a32 0%, #23233F 100%);
     color: white;
+}
+
+#article-home.quote {
+   text-align: left;
 }
 
 #article-home h2 {
     text-align: left;
 }
 
+#article-home h3 {
+   color: #e4a476;
+    font-size: 2rem;
+    padding-top: 5rem;
+    text-align: center;
+}
+
 #article-home h2,
 #article-home p {
     color: white;
+    padding-top: 5rem;
+    text-align: right;
 }
 
 #article-people {
@@ -169,7 +182,7 @@ button {
 }
 
 button:hover {
-    background-color: #e4a476;
+    background-color: #8897af;
 }
 
 footer {
@@ -223,7 +236,7 @@ footer {
 .scroll-label {
     position: absolute;
     right: 2rem;
-    background-color: #e4a476;
+    background-color: #8897af;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 10px;
