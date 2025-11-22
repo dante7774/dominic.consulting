@@ -18,7 +18,7 @@ body {
 }
 
 header {
-    background-color: transparent; /* **BOLD CHANGE**: Set to transparent initially */
+    background-color: transparent; /*Set to transparent initially */
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -27,8 +27,10 @@ header {
     right: 0;
     z-index: 100;
     /* Removed initial box-shadow */
-    transition: background-color 0.3s, box-shadow 0.3s; /* **BOLD CHANGE**: Added transition for smooth change */
+    transition: background-color 0.2s, box-shadow 0.2s; /*Added transition for smooth change */
 }
+
+
 
 nav {
     max-width: 1200px;
@@ -126,26 +128,27 @@ header.scrolled {
     color: white;
 }
 
-#article-home.quote {
-   text-align: left;
-}
-
 #article-home h2 {
     text-align: left;
 }
 
 #article-home h3 {
    color: #e4a476;
-    font-size: 2rem;
-    padding-top: 5rem;
-    text-align: center;
+    font-size: 3rem;
+    padding-top: 9rem;
+    text-align: right;
+    padding-right: 3rem;
 }
 
 #article-home h2,
 #article-home p {
     color: white;
-    padding-top: 5rem;
-    text-align: right;
+    padding-top: 9rem;
+    text-align: left;
+}
+#article-home .quote {
+    text-align: left;
+    color: #8897af;
 }
 
 #article-people {
@@ -250,4 +253,19 @@ footer {
 
 .scroll-dot-container:hover .scroll-label {
     opacity: 1;
+}
+
+.headshot {
+    width: 75%; 
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: -70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.instagram-button {
+    width: 30px;
+    height: 30px;
 }
