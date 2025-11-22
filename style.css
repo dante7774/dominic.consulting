@@ -33,7 +33,7 @@ header {
 
 
 nav {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -51,6 +51,33 @@ nav h1 {
 
 nav h1:hover {
     color: #e4a476;
+}
+
+.nav-actions {
+    display: flex; /* Use Flexbox to align items horizontally */
+    align-items: center;
+    gap: 1.5rem; /* Spacing between the icons and the CTA button */
+}
+
+.nav-link {
+    color: white; 
+    text-decoration: none;
+    font-size: 1.5rem; /* Adjust icon size */
+    transition: color 0.3s;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: #e4a476;
+}
+
+/* Placeholder style for the new links until actual icons are used */
+.icon-placeholder {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
 
 .cta-button {
@@ -82,7 +109,7 @@ article {
     flex-direction: column;
     justify-content: center;
     padding: 4rem 2rem;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
 }
 
