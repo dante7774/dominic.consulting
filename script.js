@@ -136,13 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // **New logic to change header background on scroll**
+    // Header background change logic
     const header = document.querySelector('header');
     const homeArticle = document.getElementById('article-home'); 
 
     const updateHeaderBackground = () => {
-        // **BOLD CHANGE**: Using getBoundingClientRect().bottom is more reliable than window.innerHeight
-        // This checks if the bottom of the home article is above or exactly at the top of the viewport (y-position <= 0)
         if (homeArticle && homeArticle.getBoundingClientRect().bottom <= 0) { 
             header.classList.add('scrolled');
         } else {
@@ -150,11 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // **Attach the new handler to the scroll event**
     window.addEventListener('scroll', updateHeaderBackground, { passive: true });
-
-    // **Call on load to check initial state (in case of refresh on a scrolled page)**
     updateHeaderBackground();
+
+    // Mobile Menu Toggle Logic (Ensure this block is present)
 
     const menuToggle = document.getElementById('menuToggle');
     const navLinksMobile = document.getElementById('navLinksMobile');
@@ -165,7 +162,9 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.toggle('open');
             navLinksMobile.classList.toggle('open');
 
-            // Optionally, prevent scrolling when the menu is open
+            // Prevent scrolling when the menu is open
             document.body.style.overflow = navLinksMobile.classList.contains('open') ? 'hidden' : 'auto';
         });
+    }
+
 });

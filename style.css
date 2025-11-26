@@ -394,16 +394,16 @@ footer {
     /* Reset button/link font size for desktop */
     .nav-links-mobile .nav-link,
     .nav-links-mobile .cta-button {
-        font-size: 1.5rem; /* Matches your existing font size */
+        font-size: 0.95rem;  */
         padding: 0;
     }
 }
 
 
-/* Big screens 
+/* Big screens */
 @media screen and (min-width: 1200px) {
     article {
         padding-left: 15rem; 
         padding-right: 15rem;
     }
-} */
+}
