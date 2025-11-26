@@ -400,10 +400,10 @@ footer {
 }
 
 
-/* Big screens */
+/* Big screens 
 @media screen and (min-width: 1200px) {
     article {
         padding-left: 15rem; 
         padding-right: 15rem;
     }
-}
+} */
