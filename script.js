@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateHeaderBackground, { passive: true });
     updateHeaderBackground();
 
-    // Mobile Menu Toggle Logic (Ensure this block is present)
+    // Mobile Menu Toggle Logic
 
     const menuToggle = document.getElementById('menuToggle');
     const navLinksMobile = document.getElementById('navLinksMobile');

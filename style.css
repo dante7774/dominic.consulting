@@ -298,6 +298,12 @@ footer {
 }
 
 /* Hamburger Menu and Mobile Layout */
+/* Hide the desktop menu (.nav-actions) by default (mobile view) */
+.nav-actions {
+    display: none; 
+    align-items: center;
+    gap: 1.5rem; /* Spacing between the icons and the CTA button */
+}
 
 /* 1. Mobile Toggle Button Styling (Always visible by default) */
 .menu-toggle {
@@ -324,6 +330,7 @@ footer {
 
 /* 2. Mobile Menu Styling (Hidden by default) */
 .nav-links-mobile {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -374,27 +381,39 @@ footer {
     .menu-toggle {
         display: none;
     }
+    /* Hide the mobile menu on desktop */
+    .nav-links-mobile {
+        display: none;
+    }
 
-    /* Show the navigation links horizontally on desktop */
+    /* Show the navigation links horizontally on desktop
     .nav-links-mobile {
         position: static;
         height: auto;
         width: auto;
         background: transparent;
         display: block;
-    }
+    }  */
 
-    /* Ensure the inner actions are still horizontal on desktop */
+    /* Ensure the inner actions are still horizontal on desktop
     .nav-links-mobile .nav-actions {
         flex-direction: row;
         gap: 1.5rem;
         padding-top: 0;
-    }
+    }  */
+
+    /* Explicitly show the desktop menu container and set layout */
+    .nav-actions {
+        display: flex; /* Show the desktop menu */
+        flex-direction: row;
+        gap: 1.5rem;
+        padding-top: 0;
+    } 
 
     /* Reset button/link font size for desktop */
     .nav-links-mobile .nav-link,
     .nav-links-mobile .cta-button {
-        font-size: 0.95rem;  */
+        font-size: 0.95rem;
         padding: 0;
     }
 }
