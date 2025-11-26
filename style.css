@@ -296,3 +296,11 @@ footer {
     width: 30px;
     height: 30px;
 }
+
+@media screen and (min-width: 1200px) {
+    /* Big screens */
+    article {
+        padding-left: 15rem; 
+        padding-right: 15rem;
+    }
+}
