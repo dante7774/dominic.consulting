@@ -297,8 +297,111 @@ footer {
     height: 30px;
 }
 
+/* Hamburger Menu and Mobile Layout */
+
+/* 1. Mobile Toggle Button Styling (Always visible by default) */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200; /* Ensure it is above the header and nav links */
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    transform-origin: 1px;
+}
+
+/* 2. Mobile Menu Styling (Hidden by default) */
+.nav-links-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(35, 35, 63, 0.95); /* Dark, semi-transparent overlay */
+    z-index: 150;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links-mobile.open {
+    display: flex; /* Show when 'open' class is added by JavaScript */
+}
+
+.nav-links-mobile .nav-actions {
+    flex-direction: column; /* Stack the links vertically in mobile menu */
+    gap: 2.5rem;
+    padding-top: 5rem;
+}
+
+.nav-links-mobile .nav-link,
+.nav-links-mobile .cta-button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+}
+
+/* 3. Hamburger Animation when open */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+
+/* 4. Desktop Styles (Overrides mobile styles when screen is wider than 768px) */
+@media screen and (min-width: 768px) {
+    /* Hide the hamburger icon on desktop */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Show the navigation links horizontally on desktop */
+    .nav-links-mobile {
+        position: static;
+        height: auto;
+        width: auto;
+        background: transparent;
+        display: block;
+    }
+
+    /* Ensure the inner actions are still horizontal on desktop */
+    .nav-links-mobile .nav-actions {
+        flex-direction: row;
+        gap: 1.5rem;
+        padding-top: 0;
+    }
+
+    /* Reset button/link font size for desktop */
+    .nav-links-mobile .nav-link,
+    .nav-links-mobile .cta-button {
+        font-size: 1.5rem; /* Matches your existing font size */
+        padding: 0;
+    }
+}
+
+
+/* Big screens */
 @media screen and (min-width: 1200px) {
-    /* Big screens */
     article {
         padding-left: 15rem; 
         padding-right: 15rem;

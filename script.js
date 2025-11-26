@@ -136,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // **CODE CHANGE START**
     // **New logic to change header background on scroll**
     const header = document.querySelector('header');
     const homeArticle = document.getElementById('article-home'); 
@@ -156,5 +155,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // **Call on load to check initial state (in case of refresh on a scrolled page)**
     updateHeaderBackground();
-    // **CODE CHANGE END**
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinksMobile = document.getElementById('navLinksMobile');
+
+    if (menuToggle && navLinksMobile) {
+        menuToggle.addEventListener('click', () => {
+            // Toggle the 'open' class on both the toggle button and the mobile menu container
+            menuToggle.classList.toggle('open');
+            navLinksMobile.classList.toggle('open');
+
+            // Optionally, prevent scrolling when the menu is open
+            document.body.style.overflow = navLinksMobile.classList.contains('open') ? 'hidden' : 'auto';
+        });
 });
