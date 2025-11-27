@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateActiveDot);
 
+    /* OLD SCROLL LOGIC */
+    /*
     let scrollTimeout;
     let lastScrollTop = 0;
     let isScrolling = false;
@@ -96,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             lastScrollTop = currentScrollTop;
         }, 150);
     }, { passive: true });
+    */
 
     document.addEventListener('keydown', function(e) {
         const currentScroll = window.scrollY;

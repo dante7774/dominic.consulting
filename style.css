@@ -5,7 +5,7 @@
 }
 
 html {
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
     scroll-behavior: smooth;
     overflow-y: scroll;
 }
@@ -20,7 +20,7 @@ body {
 header {
     background-color: transparent; /*Set to transparent initially */
     color: white;
-    padding: 1rem 0;
+    padding: 1rem 0 4rem 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -103,8 +103,8 @@ main {
 
 article {
     min-height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    /* scroll-snap-align: start;
+    scroll-snap-stop: always; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -285,6 +285,7 @@ footer {
 .headshot {
     width: 75%; 
     height: auto;
+    max-width: 350px;
     margin-top: 2rem;
     margin-bottom: -70px;
     margin-left: auto;
@@ -317,6 +318,7 @@ footer {
     cursor: pointer;
     padding: 0;
     z-index: 200; /* Ensure it is above the header and nav links */
+    margin-top: -3px;
 }
 
 .menu-toggle .bar {
@@ -350,15 +352,31 @@ footer {
 }
 
 .nav-links-mobile .nav-actions {
+    display: flex;
     flex-direction: column; /* Stack the links vertically in mobile menu */
     gap: 2.5rem;
     padding-top: 5rem;
 }
 
+.nav-links-mobile .mobile-nav-link-wrapper {
+    display: block;
+    padding: 1rem 2rem;
+    text-align: center; /* Center the icon */
+}
+
+.nav-links-mobile .cta-button {
+    padding: 1rem 2rem;
+}
+
+.nav-links-mobile .nav-link {
+    width: 60px;
+    height: 60px;
+}
+
 .nav-links-mobile .nav-link,
 .nav-links-mobile .cta-button {
     font-size: 1.5rem;
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
 }
 
 /* 3. Hamburger Animation when open */
